@@ -41,8 +41,8 @@ foreach($WebApp in $WebAppsCollection)
 	                # Lista el Servidor de Correo
 	                $EmailServer = (Get-SPWebApplication -IncludeCentralAdministration | Where { $_.IsAdministrationWebApplication } ) | %{$_.outboundmailserviceinstance.server} | Select Address
 					# ConfiguraciÃ³n de Mail
-	                $From = "SharePointCheckThreshold@errepar.com"
-	                $recipients = "Emmanuel Gutierrez <Emmanuel.Gutierrez@errepar.com>"
+	                $From = "SharePointCheckThreshold@contoso.com"
+	                $recipients = "Emmanuel Gutierrez <Emmanuel.Gutierrez@contoso.com>"
 	                [string[]]$To = $recipients.Split(',')
 	                $Subject = "Hay listas de SharePoint sin umbral de vista: "+$ReportDate
 	                $Body = "WARNING!!!,<br /><br />Las siguientes listas no tienen umbral de vista a la fecha $ReportDate <br /><br />" + $EmailBodyHistory
